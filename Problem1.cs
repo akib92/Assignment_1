@@ -10,8 +10,7 @@ namespace HelloWorldApp
     {
         public bool HalvesAreAlike(string s)
         {
-            //s.ToLower()
-            //0-s.Length/2 and s.Length/2 to s.Length
+
             HashSet<char> set = new HashSet<char>();
             set.Add('a');
             set.Add('e');

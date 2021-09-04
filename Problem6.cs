@@ -11,6 +11,8 @@ namespace Assignment_1
     {
         public int[] CreateTargetArray(int[] nums, int[] index)
         {
+            Console.WriteLine("Q6: Enter the sentence to convert:");
+            
             int[] target = new int[nums.Length];
 
             for (int i = 0; i < nums.Length; i++)
@@ -26,6 +28,7 @@ namespace Assignment_1
                         target[j] = target[j - 1];
                     }
                     target[index[i]] = nums[i];
+                  
                 }
             }
             return target;
@@ -35,4 +38,4 @@ namespace Assignment_1
 }
 
 
-}
+
