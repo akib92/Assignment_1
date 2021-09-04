@@ -7,13 +7,24 @@ using System.Diagnostics;
 
 namespace Assignment_1
 {
-    class Problem2
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Q1 : Enter the string:");
-            string s = Console.ReadLine();
-            Debug.WriteLine(s);
-        }
-    }
+	public class Problem2
+	{
+		public bool checkIfPangram(string sentence)
+		{
+			List<int> mp = new List<int>(26);
+			foreach (char ch in sentence)
+			{
+				mp[ch - 'a']++;
+			}
+			foreach (int num in mp)
+			{
+				if (num == 0)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+
 }

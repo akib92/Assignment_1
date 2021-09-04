@@ -7,13 +7,22 @@ using System.Diagnostics;
 
 namespace Assignment_1
 {
-    class Problem6
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Q1 : Enter the string:");
-            string s = Console.ReadLine();
-            Debug.WriteLine(s);
-        }
-    }
+	public class Problem6
+	{
+		public List<int> createTargetArray(List<int> nums, List<int> index)
+		{
+			int n = nums.Count;
+			List<int> ans = new List<int>();
+			for (int i = 0; i < n; i++)
+			{
+				//C++ TO C# CONVERTER TODO TASK: There is no direct equivalent to the STL vector 'insert' method in C#:
+				ans.insert(ans.GetEnumerator() + index[i], nums[i]);
+			}
+			return new List<int>(ans);
+		}
+	}
+
+}
+
+
 }

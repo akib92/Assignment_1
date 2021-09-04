@@ -3,17 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace Assignment_1
 {
-    class Problem3
+    public class Problem3
     {
-        static void Main(string[] args)
+        public int maximumWealth(List<vector> accounts)
         {
-            Console.WriteLine("Q1 : Enter the string:");
-            string s = Console.ReadLine();
-            Debug.WriteLine(s);
+            // to keep a track of maximum wealth;
+            int max_wealth = 0;
+            for (int i = 0; i < accounts.Count; i++)
+            {
+                // take each customer and calculate customer_wealth;
+                int customer_wealth = 0;
+                for (int j = 0; j < accounts[i].size(); j++)
+                {
+                    customer_wealth += accounts[i][j];
+                }
+                // if customer_wealth>max_wealth, make it as max.
+                if (customer_wealth > max_wealth)
+                {
+                    max_wealth = customer_wealth;
+                }
+            }
+            // return max_wealth;
+            return max_wealth;
         }
     }
+
 }
+
