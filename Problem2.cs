@@ -9,21 +9,21 @@ namespace Assignment_1
 {
 	public class Problem2
 	{
-		public bool checkIfPangram(string sentence)
+		public bool CheckIfPangram(string sentence)
 		{
-			List<int> mp = new List<int>(26);
-			foreach (char ch in sentence)
+			if (sentence.Length < 26) return false;
+
+			Dictionary<char, bool> dic = new Dictionary<char, bool>();
+
+			for (int i = 0; i < sentence.Length; i++)
 			{
-				mp[ch - 'a']++;
+				if (!dic.ContainsKey(sentence[i]))
+					dic.Add(sentence[i], true);
+
+				if (dic.Count == 26) return true;
 			}
-			foreach (int num in mp)
-			{
-				if (num == 0)
-				{
-					return false;
-				}
-			}
-			return true;
+
+			return false;
 		}
 	}
 

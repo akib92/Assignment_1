@@ -2,39 +2,50 @@
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Text;
 
 namespace HelloWorldApp
 {
-	public class Problem1
-	{
-		public bool halvesAreAlike(string s)
-		{
-			List<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
-			Dictionary<char, int> mp = new Dictionary<char, int>();
-			foreach (char vowel in vowels)
-			{
-				mp[vowel] = 1;
-			}
-			int left = 0;
-			int right = s.Length / 2;
-			int vowelsLeft = 0;
-			int vowelsRight = 0;
-			
-			while (right < s.Length)
-			{
-				if (mp[s[left++]] != 0)
-				{
-					vowelsLeft++;
-				}
-				if (mp[s[right++]] != 0)
-				{
-					vowelsRight++;
-				}
-			}
-			return vowelsLeft == vowelsRight;
-		}
-	}
+    public class Problem1
+    {
+        public bool HalvesAreAlike(string s)
+        {
+            //s.ToLower()
+            //0-s.Length/2 and s.Length/2 to s.Length
+            HashSet<char> set = new HashSet<char>();
+            set.Add('a');
+            set.Add('e');
+            set.Add('i');
+            set.Add('o');
+            set.Add('u');
+            s = s.ToLower();
+            System.Text.StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < s.Length / 2; i++)
+            {
+                sb.Append(s[i]);
+            }
+            string a = sb.ToString();
+            sb.Clear();
+            for (int i = s.Length / 2; i < s.Length; i++)
+            {
+                sb.Append(s[i]);
+            }
+            string b = sb.ToString();
+            int aCount = 0, bCount = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (set.Contains(a[i]))
+                {
+                    aCount++;
+                }
+                if (set.Contains(b[i]))
+                {
+                    bCount++;
+                }
+            }
+            return aCount == bCount;
+        }
+    }
 }
 
 

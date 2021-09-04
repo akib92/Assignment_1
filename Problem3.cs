@@ -8,28 +8,25 @@ namespace Assignment_1
 {
     public class Problem3
     {
-        public int maximumWealth(List<vector> accounts)
-        {
-            // to keep a track of maximum wealth;
-            int max_wealth = 0;
-            for (int i = 0; i < accounts.Count; i++)
-            {
-                // take each customer and calculate customer_wealth;
-                int customer_wealth = 0;
-                for (int j = 0; j < accounts[i].size(); j++)
-                {
-                    customer_wealth += accounts[i][j];
-                }
-                // if customer_wealth>max_wealth, make it as max.
-                if (customer_wealth > max_wealth)
-                {
-                    max_wealth = customer_wealth;
-                }
-            }
-            // return max_wealth;
-            return max_wealth;
-        }
-    }
+		public int MaximumWealth(int[][] accounts)
+		{
+			int i, j, sum;
+			int max = 0;
+
+			for (i = 0; i < accounts.GetLength(0); i++)
+			{
+				sum = 0;
+
+				for (j = 0; j < accounts[i].Length; j++)
+					sum += accounts[i][j];
+
+				if (sum >= max)
+					max = sum;
+			}
+
+			return max;
+		}
+	}
 
 }
 

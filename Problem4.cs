@@ -9,23 +9,26 @@ namespace Assignment_1
 {
 	public class Problem4
 	{
-		public int numJewelsInStones(string J, string S)
-		{
-			bool[] map = new bool[256];
-			foreach (var c in J)
-			{
-				map[c] = true;
-			}
-			int cnt = 0;
-			foreach (var c in S)
-			{
-				if (map[c])
-				{
-					cnt++;
-				}
-			}
-			return cnt;
-		}
-	}
+        public int NumJewelsInStones(string jewels, string stones)
+        {
+            int ans = 0;
+            Dictionary<char, Int16> ht = new Dictionary<char, Int16>();
+            foreach (char j in jewels)
+            {
+                if (!ht.ContainsKey(j))
+                    ht.Add(j, 0);
+            }
+
+            foreach (char s in stones)
+            {
+                if (ht.ContainsKey(s))
+                {
+                    ans++;
+                    continue;
+                }
+            }
+            return ans;
+        }
+    }
 
 }
