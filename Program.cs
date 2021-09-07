@@ -257,7 +257,7 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
 
 */
 
-        public bool CheckIfPangram(string sentence)
+        public static bool CheckIfPangram(string sentence)
 
         {
 
@@ -323,7 +323,7 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
 
         */
 
-        public int MaximumWealth(int[][] accounts)
+        public static  int MaximumWealth(int[,] accounts)
 
         {
 
@@ -338,8 +338,8 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
                 {
                     sum = 0;
 
-                    for (j = 0; j < accounts[i].Length; j++)
-                        sum += accounts[i][j];
+                    for (j = 0; j < accounts.GetLength(1); j++)
+                        sum += accounts[i,j];
 
                     if (sum >= max)
                         max = sum;
