@@ -15,7 +15,6 @@ namespace DIS_Assignmnet1_Fall_2021
     class Program
 
     {
-
         static void Main(string[] args)
 
         {
@@ -120,7 +119,7 @@ namespace DIS_Assignmnet1_Fall_2021
 
             String rotated_string = RestoreString(word2, indices);
 
-            Console.WriteLine("The Final string after rotation is", rotated_string);
+            Console.WriteLine("The Final string after rotation is {0}", rotated_string);
 
 
 
@@ -478,14 +477,16 @@ Constraints:
 
             {
 
-                {
+                
+                   
                     char[] charArr = new char[indices.Length];
                     for (int i = 0; i < indices.Length; i++)
                     {
                         charArr[indices[i]] = s[i];
                     }
-                    return new string(charArr);
-                }
+                string x = new string(charArr);
+                    return x;
+                
 
             }
 
