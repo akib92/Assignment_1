@@ -182,6 +182,7 @@ namespace DIS_Assignmnet1_Fall_2021
         {
 
             try
+                //Creating a HashSet with the vowels and change input string to lowercase
 
             {
                 HashSet<char> set = new HashSet<char>();
@@ -192,6 +193,7 @@ namespace DIS_Assignmnet1_Fall_2021
                 set.Add('u');
                 s = s.ToLower();
                 System.Text.StringBuilder sb = new StringBuilder();
+                //Diving the input String into two equal parts 
                 for (int i = 0; i < s.Length / 2; i++)
                 {
                     sb.Append(s[i]);
@@ -204,6 +206,7 @@ namespace DIS_Assignmnet1_Fall_2021
                 }
                 string b = sb.ToString();
                 int aCount = 0, bCount = 0;
+                //Counting the number of vowels in each part and compare
                 for (int i = 0; i < a.Length; i++)
                 {
                     if (set.Contains(a[i]))
@@ -263,11 +266,12 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
             try
 
             {
-
+                // Checks if sentence has lenght greater then 26 
                 if (sentence.Length < 26) return false;
 
                 Dictionary<char, bool> dic = new Dictionary<char, bool>();
 
+                // Checks if sentence have have 26 different characters
                 for (int i = 0; i < sentence.Length; i++)
                 {
                     if (!dic.ContainsKey(sentence[i]))
@@ -329,10 +333,11 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
             try
 
             {
-
+                //creating two integer i & j
                 int i, j, sum;
                 int max = 0;
 
+                // Getting the lenght of i and j and using sum to calculate total
                 for (i = 0; i < accounts.GetLength(0); i++)
                 {
                     sum = 0;
@@ -340,6 +345,7 @@ Note: Use of String function (Contains) and hasmap is not allowed, think of othe
                     for (j = 0; j < accounts.GetLength(1); j++)
                         sum += accounts[i,j];
 
+                    // Getting the highest sum
                     if (sum >= max)
                         max = sum;
                 }
@@ -405,12 +411,14 @@ Constraints:
 
                 int ans = 0;
                 Dictionary<char, Int16> ht = new Dictionary<char, Int16>();
+                // Read the characters in jewels
                 foreach (char j in jewels)
                 {
                     if (!ht.ContainsKey(j))
                         ht.Add(j, 0);
                 }
 
+                // Compares the characters in jewels with stone and sum
                 foreach (char s in stones)
                 {
                     if (ht.ContainsKey(s))
@@ -478,7 +486,7 @@ Constraints:
             {
 
                 
-                   
+                   // creates an integer i which sorts the strings according to the indices
                     char[] charArr = new char[indices.Length];
                     for (int i = 0; i < indices.Length; i++)
                     {
@@ -557,9 +565,10 @@ nums       index     target
             try
 
             {
-
+                // create new array
                 int[] target = new int[nums.Length];
 
+                // sort the array with nums in the target array
                 for (int i = 0; i < nums.Length; i++)
                 {
                     if (index[i] == i)
@@ -598,4 +607,8 @@ nums       index     target
 
 }
 
-//Done
+//Self-Reflection
+
+//It took me about 3-4 hours to complete the whole assignments.
+//I am new to the C# language, so learned a lot about the structure, logic and pattern about the language from the assignment. It was a very productive conceptual exercise to me
+//I believe that there could be some more basic programing challanges given to us before we were given this assignment. the assignment proved a little bit challanging to me.
